@@ -1,0 +1,34 @@
+{
+  "name": "cordova-mobile-app-template",
+  "version": "1.3.0",
+  "description": "Simple and fully customizable user interface template. Design for mobile app development on Apache Cordova framework or Ionic / Capacitor Native Runtime. Platforms: Android, iOS.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bug7a/cordova-mobile-app-ui-template.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova:template",
+    "cordova",
+    "mobile",
+    "app",
+    "template",
+    "cordova-template",
+    "cordova-android",
+    "cordova-ios",
+    "android",
+    "ios",
+    "capacitor",
+    "ionic"
+  ],
+  "author": "Bugra Ozden",
+  "license": "SEE LICENSE IN README.md",
+  "bugs": {
+    "url": "https://github.com/bug7a/cordova-mobile-app-ui-template/issues"
+  },
+  "homepage": "https://bug7a.github.io/cordova-mobile-app-ui-template/"
+}
