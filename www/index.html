@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <title>To-do list app</title>
         <meta charset="UTF-8">
@@ -7,6 +7,8 @@
 
         <link rel="stylesheet" type="text/css" href="library/basic.min.css">
         <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
+<!--        <script src="second_page.js" type="text/javascript"></script>-->
+<!--        <script src="second_page.js" type="text/javascript" charset="utf-8"</script>-->
 <!--        <script src="examples-js/custom-tab-bar/ui-bottom-tab-bar.js" type="text/javascript" charset="utf-8"></script>-->
 
         <script>
@@ -109,11 +111,13 @@
             // defaultView.default.backgroundColor = "white";
             // defaultView.default.scrollY = 1;
             // defaultView.default.showWithMotion = 0;
+            // secondExamplePage
             page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
             // defaultView.create();
             document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
             document.addEventListener("button1Click",  function(e){ e.preventDefault();}, { passive: false });
-
+            document.addEventListener('button2Click', function (e) {e.preventDefault();}, {passive: false})
+            // secondExamplePage.openInSecondView()
             // UI OBJECT: Bottom tab bar:
 
             // Restore saved information.
@@ -228,10 +232,17 @@
             that.text = "Created by Yuki Ito."
 
 
-            createButton(50, 550, USED_WIDTH -111, 100)
+            createButton(50, 550, USED_WIDTH -111)
             that.text = 'クリックして!!'
             that.onClick(button1Click)
             // var1.onClick(button1Click)
+            createButton(50, 620, USED_WIDTH -111)
+            homePage.button2 = that
+            that.text = "ページ推移"
+            // that.onClick(secondExamplePage.openInSecondView())
+            that.onClick(button2Click)
+
+
 
 
 
@@ -268,6 +279,48 @@
 
             print("button1 hit.")
             homePage.label1.text = 'あなたがクリックしたのを私は知っている。'
+        }
+        const button2Click = function (e){
+            print("button2 hit.")
+            let secondPage = e.homepage = createBox()
+            that.width = USED_WIDTH
+            that.height = basic.getDefaultContainerBox().height
+            // that.color = ""
+            that.top = 0
+            that.center("left")
+
+            let button3 = createButton(50,USED_WIDTH, 200, 200)
+
+            // let box1 = createTextBox(50,200,500,700)
+            // let button3 = createButton()
+            // button3.left = 50
+            // button3.width = 200
+            // button3.height = 300
+            // secondPage.add(that)
+            // createBox(50,200,500,200)
+            // that.backgroundColor = "blue"
+
+
+            // that.color = "blue"
+            // secondPage.add(box1)
+            // secondPage.boxNewTask = createBox(10, 10, 480, )
+            // secondPage.add(that)
+            // that.color = "whitesmoke"
+            // that.border = 0
+            // that.round = 16
+
+
+
+            // const secondpage =  require("second_page.js")
+            // secondpage()
+            // importScripts("second_page.js")
+            // defaultView.clear()
+            // homePage.defaultView.clear()
+            // page.clean()
+            // homePage.cleanProject()
+            // e.html = "template-a-page.htm"
+            // homePage.clean()
+
         }
         const resizeHomePage = function() {
 

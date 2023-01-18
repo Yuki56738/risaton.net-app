@@ -22,9 +22,9 @@
   },
   "cordova": {
     "platforms": [
-      "browser",
+      "ios",
       "electron",
-      "ios"
+      "browser"
     ]
   }
 }
