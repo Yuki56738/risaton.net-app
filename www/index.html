@@ -169,9 +169,11 @@
             that.round = 25
             that.aline(txtNewTask, "right", 5)
             that.onClick(addTask)
-            that.add(createLabel(50, -200, 200, 50).text = "Created by Yuki Ito.")
+            // homePage.addItem((createLabel(50, 500, 200, 50).text = "Created by Yuki Ito."))
+            that.addItem((createLabel(50, 200, USED_WIDTH,500).text = "Created by Yuki Ito."))
 
-            
+
+
             // UI: TASK ITEMS:
             // BOX: Scrollable container box of task items.
             homePage.boxTaskItemList = createBox(10, 100, 480, getDefaultContainerBox().height - 110)
@@ -248,7 +250,10 @@
             // console.log(homePage.html)
             // homePage.openInDefaultView();
         }
-
+        // const onClickYuki = function (event) {
+        //     page.add(createLabel(50, event.height.RG_INTEGER+200, USED_WIDTH,500).text = "Created by Yuki Ito.")
+        //
+        // }
         const resizeHomePage = function() {
 
             page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
