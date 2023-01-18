@@ -1,113 +1,22 @@
-<!-- Bismillah -->
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <title>Cordova Mobile App UI Template</title>
-        
+        <title>To-do list app</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- LIBRARIES -->
-        <link rel="stylesheet" type="text/css" href="library/basic.css">
-        <script src="library/basic.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css" href="library/basic.min.css">
+        <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
 
-        <!-- WHICH FRAMEWORK DO YOU USE? Cordova or Capacitor -->
-        <script src="cordova.js" type="text/javascript" charset="utf-8"></script>
-        <script src="capacitor.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- GLOBAL VARIABLES -->
-        <script src="js/global.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- CONTROLLERS -->
-        <script src="js/database.js" type="text/javascript" charset="utf-8"></script>
-        
-        <!-- UI COMPONENTS -->
-        <script src="js/component/tool.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-title.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-left-title.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-click-effect.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-search-box.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-close-button.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-item-list.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-select-text.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-stepper.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-toggle.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-web-view.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-waiting-view.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-group.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-cells.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-notice.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-tabs.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-page-control.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-action-button.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/component/ui-progress-bar.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- SHARED FUNCTIONS -->
-        <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-        
-        <!-- MOBILE APP STRUCTURE -->
-        <script src="js/style.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/view/launch-view.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/view/safe-area.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/view/default-view.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/view/second-view.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/view/small-view.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/ui-top-bar.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/ui-bottom-bar.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/ui-side-bar.js" type="text/javascript" charset="utf-8"></script>
-        
-        <!-- PAGES WITH OWN CONTAINER (VIEW) -->
-        <script src="js/view/login-view.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- PAGES -->
-        <script src="js/page/small/small-example-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/small/select-color-dialog.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/small/search-preview-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/small/edit-item-dialog.js" type="text/javascript" charset="utf-8"></script>
-
-        <script src="js/page/second/second-example-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/second/menu-style-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/second/security-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/second/terms-of-use-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/second/my-documents-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/second/example-viewer-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/second/template-a-page.js" type="text/javascript" charset="utf-8"></script>
-
-        <script src="js/page/default/default-example-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/default/bars-test-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/default/settings-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/default/tasks-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/default/examples-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/default/search-page.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/page/default/home-page.js" type="text/javascript" charset="utf-8"></script>
- 
-        <style>
-
-            /* app.getSafeAreaOuterSpaces() */
-            :root {
-                --sat: env(safe-area-inset-top, 0px);
-                --sar: env(safe-area-inset-right, 0px);
-                --sab: env(safe-area-inset-bottom, 0px);
-                --sal: env(safe-area-inset-left, 0px);
-            }
-
-            /* Search box */
-            .search-box::-webkit-input-placeholder {
-                color: rgba(0, 0, 0, 0.4);
-            }
-
-        </style>
-        
         <script>
 
         /*
 
-        MOBILE APP UI TEMPLATE (PLATFORMS; ANDROID, iOS):
+        TO-DO LIST APP (FOR MOBILE):
 
-        Website:  https://bug7a.github.io/cordova-mobile-app-ui-template/
+        - An application that keeps a to-do list.
+        - When the application is closed, the information is stored in local storage.
+    
         Handbook: https://bug7a.github.io/basic.js-handbook/
             
         This template, can be used to develop mobile applications with:
@@ -170,192 +79,298 @@
         NOTE: Dont forget to install the Dialog plugin to test example code: npm install @capacitor/dialog
 
         */
- 
 
-        // VARIABLES:
-        const APP_ID = "app-id";
+        const USED_WIDTH = 500
+        const MAX_ZOOMABLE_WIDTH = 700
+
+        let taskList = []
+        let taskDataList = []
+
+        // BOX: Container box of home content.
+        let homePage
+
+        // Shortcut names for frequently used objects.
+        let txtNewTask
+        let lblSelectedCount
 
         // First running function.
-        const prepareApp = function() {
+        const start = function() {
 
-            print("App started. Platform: " + app.getPlatformId());
+            // Support all resolutions.
+            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
 
-            // If more resolution is desired for large screen device:
-            //app.calculateResolution();
+            // Restore saved information.
+            loadTaskDataList()
 
-            // Supports all screen resolutions (Orientation: portrait)
-            page.fit(app.usedWidth, app.maxZoomableWidth);
-
-            // Give the browser some time for initial processing.
-            launchView.create({ delayTime: 1300 });
-
-            // Safearea outer spaces.
-            app.getSafeAreaOuterSpaces(function(spaces) {
-
-                app.safeAreaInsetTop = basic.withPageZoom(spaces.top);
-                app.safeAreaInsetBottom = basic.withPageZoom(spaces.bottom);
-                app.safeAreaInsetLeft = basic.withPageZoom(spaces.left);
-                app.safeAreaInsetRight = basic.withPageZoom(spaces.right);
-
-                // SAFE AREA: Default values.
-                safeArea.default.width = app.usedWidth;
-                safeArea.default.topOuterSpace = app.safeAreaInsetTop;
-                safeArea.default.bottomOuterSpace = app.safeAreaInsetBottom;
-                //safeArea.default.backgroundColor = "transparent";
-                //safeArea.default.outerBackgroundColor = "white";
-                //safeArea.default.statusBarBackgroundColor = "rgba(0, 0, 0, 0.05)";
-                safeArea.default.statusBarBackgroundHeight = app.safeAreaInsetTop;
-
-                // SAFE AREA: Left some space for status bar.
-                safeArea.create();
-                // Objects are first created in the "safeArea". (Previous value is the "page")
-                basic.setDefaultContainerBox(safeArea.getContainerBox());
-
-                // Change launchView layer.
-                launchView.showOnSafearea();
-                
-                // Start the app.
-                startApp();
-
-            });
-
-        };
-
-        // Second running function.
-        const startApp = function() {
-
-            saveGlobal(); // Close this line to store data.
-            // NOTE: For reseting global variables, run saveGlobal() before loadGlobal():
-
-            loadGlobal();
-
-            safeArea.setBackgroundColor("transparent");
-            safeArea.setOuterBackgroundColor("white");
-            // safeArea.setStatusBarBackgroundColor() works only at notched devices.
-            safeArea.setStatusBarBackgroundColor("rgba(0, 0, 0, 0.0)");
+            // UI: HOME PAGE:
+            // BOX: Container box of home content. Parameters: left, top, width, height.
+            homePage = createBox()
+            that.width = USED_WIDTH
+            that.height = basic.getDefaultContainerBox().height
+            that.color = "white"
+            that.top = 0
+            that.center("left")
             
-            // UI DEFAULT VIEW: Default page view:
-            //defaultView.default.backgroundColor = "white";
-            //defaultView.default.scrollY = 1;
-            //defaultView.default.showWithMotion = 1;
-            defaultView.create();
-
-            // UI TOP BAR: Title and buttons:
-            //topBar.default.height = 105;
-            topBar.create();
-            topBar.menuButton.onClick(showSideBar);
+            // UI: ADD NEW TASK:
+            // BOX: Container box for adding new task.
+            homePage.boxNewTask = createBox(10, 10, 480, 80)
+            homePage.add(that)
+            that.color = "whitesmoke"
+            that.border = 0
+            that.round = 16
             
-            // UI BOTTOM BAR: Image buttons at bottom:
-            //bottomBar.default.height = 80;
-            bottomBar.create();
-            bottomBar.createItemsByDataList(database.getBottomBarItemDataList());
-            bottomBar.onItemClick(openPageById);
+            // TEXTBOX: Where the new task is written.
+            homePage.boxNewTask.txtNewTask = createTextBox(20, 15, 380)
+            homePage.boxNewTask.add(that)
+            that.minimal = 1
+            that.color = "transparent"
+            that.inputElement.setAttribute("placeholder", "Add a task")
+            that.onChange(addTask)
+            // Set shortcut name.
+            txtNewTask = homePage.boxNewTask.txtNewTask
 
-            // UI SECOND VIEW: If you need a view without unload page in defaultView:
-            //secondView.default.backgroundColor = "white";
-            //secondView.default.scrollY = 1;
-            //secondView.default.showWithMotion = 1;
-            secondView.create();
-
-            // UI SMALL VIEW: For small pages, extra info, custom dialogs etc.
-            //smallView.default.height = 500;
-            //smallView.default.backgroundColor = "white";
-            //smallView.default.coverColor = "rgba(0, 0, 0, 0.4)";
-            //smallView.default.topRound = 13;
-            //smallView.default.scrollY = 0;
-            //smallView.default.showWithMotion = 1;
-            smallView.create();
-
-            // UI SIDE MENU BAR: Right side menu:
-            sideBar.create();
-            sideBar.setTitle("CATEGORIES");
-            sideBar.createItemsByDataList(database.getSideMenuBarItemDataList());
-            sideBar.selectItemByIndex(0);
-            sideBar.onSelectionChange(sideBarItemSelectionChanged);
-
-            // UI OBJECT: Login view:
-            loginView.create();
-            //loginView.show()
-            sideBar.lockScreenButton.onClick(lockScreen);
-
-            // Shows where did you tap.
-            clickEffect.create();
-
-            // UI WAITING VIEW: It prevents the user from touching the screen until the process is complete.
-            //waitingView.default.coverBackground = "rgba(0, 0, 0, 0.4)";
-            //waitingView.default.waitingIconFile = "js/component/ui-waiting-view/clock.png";
-            waitingView.create();
+            // LABEL: Add new task label button.
+            homePage.boxNewTask.lblAddButton = createLabel()
+            homePage.boxNewTask.add(that)
+            that.text = "+"
+            that.textAlign = "center"
+            that.color = "#23BCC1BB"
+            that.textColor = "rgba(255, 255, 255, 0.95)"
+            that.height = 50
+            that.width = that.height
+            that.fontSize = 36
+            that.round = 25
+            that.aline(txtNewTask, "right", 5)
+            that.onClick(addTask)
             
-            // Open the home page.
-            openPageById(homePage.PAGE_ID);
+            // UI: TASK ITEMS:
+            // BOX: Scrollable container box of task items.
+            homePage.boxTaskItemList = createBox(10, 100, 480, getDefaultContainerBox().height - 110)
+            homePage.add(that)
+            that.color = "white"
+            that.border = 0
+            that.scrollY = 1
+            
+            // UI: DELETE TASKS:
+            // BOX: Container box for delete tasks.
+            homePage.boxDeleteTask = createBox(10, 10, 480, 80)
+            homePage.add(that)
+            that.color = "whitesmoke"
+            that.round = 16
+            that.visible = 0
 
-            // NOTE: The order in which objects are created determines the layers they are in.
+            // BOX: Background box for delete image.
+            homePage.boxDeleteTask.boxBackground = createBox(0, 0, 55, 55)
+            homePage.boxDeleteTask.add(that)
+            that.color = "#ED6D5230"
+            that.round = 30
+            that.center()
+            that.onClick(removeSelectedTasks)
 
+            // IMAGE: Delete image.
+            homePage.boxDeleteTask.boxBackground.imgDelete = createImage(0, 0, 35, 35)
+            homePage.boxDeleteTask.boxBackground.add(that)
+            that.load("assets/todo-app/trash.svg")
+            that.opacity = 0.9
+            that.center()
+
+            // LABEL: Count of selected items on delete image.
+            homePage.boxDeleteTask.lblCount = createLabel()
+            homePage.boxDeleteTask.add(that)
+            that.left = homePage.boxDeleteTask.boxBackground.left + 41
+            that.top = homePage.boxDeleteTask.boxBackground.top - 4
+            that.width = "auto"
+            that.height = "auto"
+            that.color = "white"
+            that.text = "0"
+            that.textColor = "#141414"
+            that.fontSize = 16
+            that.spaceY = 2
+            that.spaceX = 7
+            that.border = 1
+            that.borderColor = "#141414"
+            that.element.style.fontFamily = "opensans-bold"
+            that.round = 50
+            that.opacity = 0.7
+            // Set shortcut name.
+            lblSelectedCount = homePage.boxDeleteTask.lblCount
+
+            // When page reopens, create old records.
+            refreshTasks()
+
+            // Run each time the page size changes.
+            page.onResize(resizeHomePage)
         }
 
-        const openPageById = function(pageId) {
+        const resizeHomePage = function() {
 
-            switch(pageId) {
+            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
 
-                case homePage.PAGE_ID:
-                    homePage.openInDefaultView();
-                    break;
+            homePage.height = getDefaultContainerBox().height
+            homePage.boxTaskItemList.height = getDefaultContainerBox().height - 110
+            homePage.center("left")
+        }
 
-                case searchPage.PAGE_ID:
-                    searchPage.openInDefaultView();
-                    break;
+        const addTask = function() {
 
-                case examplesPage.PAGE_ID:
-                    examplesPage.openInDefaultView();
-                    break;
+            const taskText = txtNewTask.text
 
-                case tasksPage.PAGE_ID:
-                    tasksPage.openInDefaultView();
-                    break;
+            if (taskText != "") {
+                addTaskItem(taskText)
+                addTaskData(taskText)
 
-                case settingsPage.PAGE_ID:
-                    settingsPage.openInDefaultView();
-                    break;
+                txtNewTask.text = ""
+            }
+        }
 
+        // Clear all tasks and recreate based on data list.
+        const refreshTasks = function() {
+
+            // Clear all tasks.
+            taskList = []
+            homePage.boxTaskItemList.html = ""
+
+            for (let i = (taskDataList.length - 1); i >= 0; i--) {
+                addTaskItem(taskDataList[i])
+            }
+        }
+
+        // Add new task item object.
+        const addTaskItem = function(taskText) {
+
+            const newItem = createTaskItem(taskText)
+            homePage.boxTaskItemList.add(newItem)
+
+            taskList.unshift(newItem)
+
+            // After the automatic size calculation is complete, reposition the objects.
+            newItem.lblText.onResize(repositionTasks)
+
+            // NOTE: .onResize() has been added for each item of the tasks;
+            // when a task's text changes size, all tasks are repositioned.
+        }
+
+        // Add new task data.
+        const addTaskData = function(taskText) {
+            taskDataList.unshift(taskText)
+            saveTaskDataList()
+        }
+
+        // Create new task item object.
+        const createTaskItem = function(taskText) {
+
+            // BOX: Task item container box.
+            const box = createBox(0, 0, 480, 100)
+            that.color = "white"
+            that.round = 4
+            that.onClick(selectTask)
+            // Let vertical position change be with motion.
+            that.setMotion("top 0.2s")
+
+            // LABEL: Task text.
+            box.lblText = createLabel(50, 10, 410, "auto")
+            box.add(that)
+            that.color = "transparent"
+            that.text = taskText
+
+            // BOX: Selection circle.
+            box.boxTick = createBox(15, 15, 20, 20)
+            box.add(that)
+            that.round = 10
+            that.border = 1
+            that.color = "whitesmoke"
+            that.borderColor = "lightgray"
+
+            // Define a variable inside the object.
+            box.isSelected = 0
+
+            makeBasicObject(box)
+            return box
+        }
+
+        const selectTask = function(clickedTask) {
+
+            // If item is selected:
+            if (clickedTask.isSelected) {
+                // Unselect it.
+                clickedTask.isSelected = 0
+                clickedTask.boxTick.color = "whitesmoke"
+                clickedTask.boxTick.border = 1
+                clickedTask.lblText.textColor = basic.TEXT_COLOR
+                lblSelectedCount.text = num(lblSelectedCount.text) - 1
+
+            } else {
+                // Select it.
+                clickedTask.isSelected = 1
+                clickedTask.boxTick.color = "tomato"
+                clickedTask.boxTick.border = 0
+                clickedTask.lblText.textColor = "tomato"
+                lblSelectedCount.text = num(lblSelectedCount.text) + 1
             }
 
+            // Show/hide delete task box by selected count.
+            if (num(lblSelectedCount.text) > 0) {
+                homePage.boxDeleteTask.visible = 1
+
+            } else {
+                homePage.boxDeleteTask.visible = 0
+            }
         }
 
-        const sideBarItemSelectionChanged = function(item, itemId) {
-            print("Side bar selection changed: " + itemId);
+        const removeSelectedTasks = function() {
+
+            let newTaskDataList = []
+            let newTaskList = []
+
+            for (let i = 0; i < taskList.length; i++) {
+                // If item is selected:
+                if(taskList[i].isSelected) {
+                    // Remove it.
+                    taskList[i].remove()
+
+                } else {
+                    // Add it to the new list.
+                    newTaskDataList.push(taskDataList[i])
+                    newTaskList.push(taskList[i])
+                }
+            }
+
+            taskDataList = newTaskDataList
+            taskList = newTaskList
+            saveTaskDataList()
+
+            repositionTasks()
+
+            // Clean and hide delete task box.
+            lblSelectedCount.text = "0"
+            homePage.boxDeleteTask.visible = 0
         }
 
-        const showSideBar = function() {
-            sideBar.setVisible(1);
+        const saveTaskDataList = function() {
+            storage.save("todoApp-taskDataList", taskDataList)
         }
 
-        const lockScreen = function() {
-
-            sideBar.setVisible(0);
-            loginView.show();
-
+        const loadTaskDataList = function() {
+            taskDataList = storage.load("todoApp-taskDataList") || []
         }
 
-        // Run the prepareApp() function when the app is ready:
-        app.onDeviceReady(prepareApp);
+        // Because object positioning uses the coordinate system.
+        const repositionTasks = function() {
 
-        </script>
+            let top = 0
+
+            for (let i = 0; i < taskList.length; i++) {
+                taskList[i].top = top
+                taskList[i].height = taskList[i].lblText.height + 20
+
+                top += taskList[i].height
+            }
+        }
         
+        </script>
+
     </head>
     <body>
-        
-        <!-- HTML MODELS -->
-        <div style="display:none">
-
-            <!-- Alternative use to create repeating patterns (See Example: html-model-usage.htm)  -->
-            <div id="item-model-num1" class="item-model">
-                <div class="item-model background"></div>
-                <img class="item-model icon" src="{{iconFile}}">
-                <div class="item-model title">{{title}}</div>
-                <div class="item-model description">{{description}}</div>
-            </div>
-            
-        </div>
         
     </body>
 </html>
