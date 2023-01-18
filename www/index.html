@@ -105,9 +105,9 @@
             // defaultView.default.backgroundColor = "white";
             // defaultView.default.scrollY = 1;
             // defaultView.default.showWithMotion = 0;
-            // page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
+            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
             // defaultView.create();
-
+            document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
             // UI OBJECT: Bottom tab bar:
             // bottomTabBar.create();
             // bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
