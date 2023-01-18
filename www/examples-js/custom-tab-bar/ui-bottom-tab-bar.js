@@ -27,7 +27,7 @@ bottomTabBar.onItemClickFunc = function() {};
 
 bottomTabBar.create = function() {
 
-    bottomTabBar.WIDTH = 600;
+    bottomTabBar.WIDTH = 450;
     bottomTabBar.HEIGHT = 150;
     bottomTabBar.BACK_WIDTH = 600 - 40;
     bottomTabBar.BACK_HEIGHT = bottomTabBar.HEIGHT - 50;
