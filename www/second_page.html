@@ -116,8 +116,8 @@
             page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
             // defaultView.create();
             document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
-            document.addEventListener("button1Click",  function(e){ e.preventDefault();}, { passive: false });
-            document.addEventListener('button2Click', function (e) {e.preventDefault();}, {passive: false})
+            document.addEventListener("button3Click",  function(e){ e.preventDefault();}, { passive: false });
+            document.addEventListener('button4Click', function (e) {e.preventDefault();}, {passive: false})
             // secondExamplePage.openInSecondView()
             // UI OBJECT: Bottom tab bar:
 
@@ -235,14 +235,14 @@
 
             createButton(50, 550, USED_WIDTH -111)
             that.text = 'クリックして!!'
-            that.onClick(button1Click)
+            that.onClick(button3Click)
             // var1.onClick(button1Click)
             createButton(50, 620, USED_WIDTH -111)
             homePage.button2 = that
             that.text = "ページ推移"
 
             // that.onClick(secondExamplePage.openInSecondView())
-            that.onClick(button2Click)
+            that.onClick(button4Click)
 
 
 
@@ -277,12 +277,12 @@
             // homePage.openInDefaultView();
         }
 
-        const button1Click = function () {
+        const button3Click = function () {
 
             print("button1 hit.")
             homePage.label1.text = 'あなたがクリックしたのを私は知っている。'
         }
-        const button2Click = function (e){
+        const button4Click = function (e){
             print("button2 hit.")
             htmPage = UIWebView.create();
             that.width = 500;
