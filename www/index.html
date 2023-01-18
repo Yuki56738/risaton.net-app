@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" type="text/css" href="library/basic.min.css">
         <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/component/ui-web-view.js" type="text/javascript" charset="utf-8"></script>
 <!--        <script src="second_page.js" type="text/javascript"></script>-->
 <!--        <script src="second_page.js" type="text/javascript" charset="utf-8"</script>-->
 <!--        <script src="examples-js/custom-tab-bar/ui-bottom-tab-bar.js" type="text/javascript" charset="utf-8"></script>-->
@@ -282,14 +283,30 @@
         }
         const button2Click = function (e){
             print("button2 hit.")
-            let secondPage = e.homepage = createBox()
-            that.width = USED_WIDTH
-            that.height = basic.getDefaultContainerBox().height
-            // that.color = ""
+            htmPage = UIWebView.create();
+            that.width = 500;
+            that.height = 700;
+            that.loadHTMLFile("second_page.html");
+            that.center("left");
             that.top = 0
-            that.center("left")
+            //
+            // that.round = 4;
+            // Show at:
+            // that.top = 0
 
-            let button3 = createButton(50,USED_WIDTH, 200, 200)
+            // let secondPage = e.homepage = createBox()
+            // that.width = USED_WIDTH
+            // that.height = basic.getDefaultContainerBox().height
+            // that.color = "white"
+            // that.top = 0
+            // that.center("left")
+            //
+            //
+            //
+            // let button3 = createButton(50,USED_WIDTH, 200, 200)
+            // button3.onClick(function (e) {
+            //     start()
+            // })
 
             // let box1 = createTextBox(50,200,500,700)
             // let button3 = createButton()
