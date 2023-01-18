@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" type="text/css" href="library/basic.min.css">
         <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="examples-js/custom-tab-bar/ui-bottom-tab-bar.js" type="text/javascript" charset="utf-8"></script>
 
         <script>
 
@@ -93,11 +94,35 @@
         let txtNewTask
         let lblSelectedCount
 
+
+
         // First running function.
         const start = function() {
+            // page.color = "white";
+            //
+            // // UI DEFAULT VIEW: Default page view:
+            // //defaultView.default.backgroundColor = "white";
+            // //defaultView.default.scrollY = 1;
+            // defaultView.default.showWithMotion = 0;
+            // defaultView.create();
+
+            // UI OBJECT: Bottom tab bar:
+            bottomTabBar.create();
+            // bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
+            //     homePage.openPageByIndex(selectedItemIndex);
+            // });
+
+            // UI SECOND VIEW: If you need a view without unload page in defaultView:
+            //secondView.default.backgroundColor = "white";
+            //secondView.default.scrollY = 1;
+            //secondView.default.showWithMotion = 1;
+            // secondView.create();
+
+            // homePage.openInDefaultView();
+            //
 
             // Support all resolutions.
-            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
+            // page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
 
             // Restore saved information.
             loadTaskDataList()
