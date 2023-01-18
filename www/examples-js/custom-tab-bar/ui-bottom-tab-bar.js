@@ -17,7 +17,7 @@ var bottomTabBar = {};
 
 bottomTabBar.itemDataList = [
     { pageId: 1, title: "STATUS", iconFile: "examples-js/custom-tab-bar/assets/status.png" },
-    { pageId: 2, title: "RECEIPTS", iconFile: "examples-js/custom-tab-bar/assets/transactions.png" },
+    // { pageId: 2, title: "RECEIPTS", iconFile: "examples-js/custom-tab-bar/assets/transactions.png" },
     { pageId: 3, title: "TOOLS", iconFile: "examples-js/custom-tab-bar/assets/settings.png" }
 ];
 

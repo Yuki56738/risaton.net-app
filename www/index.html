@@ -81,8 +81,8 @@
 
         */
 
-        const USED_WIDTH = 500
-        const MAX_ZOOMABLE_WIDTH = 700
+        // const USED_WIDTH = 500
+        // const MAX_ZOOMABLE_WIDTH = 700
 
         let taskList = []
         let taskDataList = []
@@ -94,20 +94,22 @@
         let txtNewTask
         let lblSelectedCount
 
-
+        const USED_WIDTH = 500
+        const MAX_ZOOMABLE_WIDTH = 700
 
         // First running function.
         const start = function() {
             // page.color = "white";
             //
-            // // UI DEFAULT VIEW: Default page view:
-            // //defaultView.default.backgroundColor = "white";
-            // //defaultView.default.scrollY = 1;
+            // UI DEFAULT VIEW: Default page view:
+            // defaultView.default.backgroundColor = "white";
+            // defaultView.default.scrollY = 1;
             // defaultView.default.showWithMotion = 0;
+            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
             // defaultView.create();
 
             // UI OBJECT: Bottom tab bar:
-            bottomTabBar.create();
+            // bottomTabBar.create();
             // bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
             //     homePage.openPageByIndex(selectedItemIndex);
             // });
@@ -225,6 +227,19 @@
 
             // Run each time the page size changes.
             page.onResize(resizeHomePage)
+            // UI OBJECT: Bottom tab bar:
+            bottomTabBar.create();
+            bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
+                homePage.openPageByIndex(selectedItemIndex);
+            });
+
+            // UI SECOND VIEW: If you need a view without unload page in defaultView:
+            //secondView.default.backgroundColor = "white";
+            //secondView.default.scrollY = 1;
+            //secondView.default.showWithMotion = 1;
+            secondView.create();
+
+            homePage.openInDefaultView();
         }
 
         const resizeHomePage = function() {
