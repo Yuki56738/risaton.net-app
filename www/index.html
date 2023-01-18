@@ -169,6 +169,8 @@
             that.round = 25
             that.aline(txtNewTask, "right", 5)
             that.onClick(addTask)
+            that.add(createLabel(50,200,200,100).text = "Created by Yuki Ito.")
+
             
             // UI: TASK ITEMS:
             // BOX: Scrollable container box of task items.
@@ -177,7 +179,7 @@
             that.color = "white"
             that.border = 0
             that.scrollY = 1
-            
+
             // UI: DELETE TASKS:
             // BOX: Container box for delete tasks.
             homePage.boxDeleteTask = createBox(10, 10, 480, 80)
@@ -232,6 +234,7 @@
             bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
                 homePage.openPageByIndex(selectedItemIndex);
             });
+
 
             // UI SECOND VIEW: If you need a view without unload page in defaultView:
             //secondView.default.backgroundColor = "white";
