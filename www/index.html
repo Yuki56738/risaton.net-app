@@ -94,10 +94,11 @@
         let txtNewTask
         let lblSelectedCount
         let label1
+        let field_description
 
         const USED_WIDTH = 500
         const MAX_ZOOMABLE_WIDTH = 700
-
+        let AddATask
         // let label1 = 0
 
         // First running function.
@@ -137,10 +138,14 @@
             
             // TEXTBOX: Where the new task is written.
             homePage.boxNewTask.txtNewTask = createTextBox(20, 15, 380)
+            homePage.field_description = that
+            AddATask = that
             homePage.boxNewTask.add(that)
             that.minimal = 1
             that.color = "transparent"
-            that.inputElement.setAttribute("placeholder", "Add a task")
+            // that.inputElement.setAttribute("placeholder", "Add a task")
+            that.inputElement.setAttribute("placeholder", "タスクを追加する =>")
+
             that.onChange(addTask)
             // Set shortcut name.
             txtNewTask = homePage.boxNewTask.txtNewTask
@@ -225,8 +230,8 @@
             createButton(50, 370, USED_WIDTH-100, 100)
             that.text = 'クリックして!!'
             that.onClick(button1Click)
-
             // var1.onClick(button1Click)
+
 
 
             // When page reopens, create old records.
@@ -240,6 +245,8 @@
                 homePage.openPageByIndex(selectedItemIndex);
             });
             //
+
+            resizeHomePage()
 
 
             // UI SECOND VIEW: If you need a view without unload page in defaultView:
