@@ -93,6 +93,7 @@
         // Shortcut names for frequently used objects.
         let txtNewTask
         let lblSelectedCount
+        let label1
 
         const USED_WIDTH = 500
         const MAX_ZOOMABLE_WIDTH = 700
@@ -111,6 +112,8 @@
             // defaultView.create();
             document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
             document.addEventListener("button1Click",  function(e){ e.preventDefault();}, { passive: false });
+            // document.addEventListener('deviceready', function(e){e.preventDefault()}, {passive: false})
+            // that.text = "Created by Yuki I
 
             // UI OBJECT: Bottom tab bar:
             // bottomTabBar.create();
@@ -236,13 +239,28 @@
             that.opacity = 0.7
             // Set shortcut name.
             lblSelectedCount = homePage.boxDeleteTask.lblCount
-            that.add((createLabel(50, 700, USED_WIDTH,500).text = "Created by Yuki Ito."))
-            label1 = that.id
+
+            // createLabel(50, 700, USED_WIDTH,500)
+            homePage.label1 = createLabel()
+            that.left = 50
+            that.top = 500
+            // that.text = 'aaaaa'
+            // print(label1)
+            // label1 = that.text
+            that.text = "Created by Yuki Ito."
+
+
+
+            // label1 = that.getId()
+            // label1 = that.id
             // label1.innerText = 'aaaaa'
             // document.getElementById(label1)
 
 
-            that.add(createButton(50, 600, USED_WIDTH-100, 100)).onClick(button1Click)
+            createButton(50, 600, USED_WIDTH-100, 100)
+            that.text = 'クリックして!!'
+            that.onClick(button1Click)
+
             // var1.onClick(button1Click)
 
 
@@ -256,6 +274,7 @@
             bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
                 homePage.openPageByIndex(selectedItemIndex);
             });
+            //
 
 
             // UI SECOND VIEW: If you need a view without unload page in defaultView:
@@ -282,6 +301,8 @@
         // }
 
         const button1Click = function () {
+            // print(e.text)
+            // txtNewTask()
             // page.add(that.add(createButton(50, 500, USED_WIDTH-100, 100)))
             // document.exitPointerLock()
             // document.getElementById()
@@ -291,6 +312,9 @@
             // label1.innerText = "abcd"
             // label1.innerText = "aaaaaa"
             // document.getElementById(label1).innerText = 'aaaa'
+            // homePage.backgroundColor = "red"
+            print("button1 hit.")
+            homePage.label1.text = 'あなたがクリックしたのを私は知っている。'
         }
         const resizeHomePage = function() {
 
