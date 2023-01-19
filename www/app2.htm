@@ -81,6 +81,8 @@
 
         */
 
+        // import {write} from "../platforms/browser/platform_www/plugins/cordova-plugin-file/src/browser/FileProxy";
+
         const USED_WIDTH = 500
         const MAX_ZOOMABLE_WIDTH = 700
 
@@ -95,13 +97,13 @@
         let lblSelectedCount
 
         // First running function.
-        const start = function() {
+        const start = function () {
 
             // Support all resolutions.
             page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
 
             // Restore saved information.
-            loadTaskDataList()
+            // loadTaskDataList()
 
             // UI: HOME PAGE:
             // BOX: Container box of home content. Parameters: left, top, width, height.
@@ -112,24 +114,28 @@
             // that.color = "white"
             that.top = 0
             that.center("left")
+            // print(cordova.file)
+            // cordova.writeFile("file.txt","aaa",{create: true})
+            // print(cordova.file.name)
             // createLabel(50, 300, USED_WIDTH- 110, MAX_ZOOMABLE_WIDTH - 110)
             // that.element.id = 'device1'
 
             // document.getElementById('device1').innerText = device.model
             // that.text = device.model
-                // device.model
+            // device.model
             createButton(50, 500, 'auto', 'auto')
             that.text = '戻る'
             that.onClick(function (e) {
                 document.location = 'index.html'
             })
+            homePage.add(that)
 
             // createImage(50, 300,'auto')
             // that.imageElement.id = 'myImage'
             // that.element.id = 'myImage'
             // homePage.image1 = that
             // homePage.add()
-            createImage(50,200, 500,'auto')
+            createImage(50, 200, 500, 'auto')
             that.element.id = 'image'
             homePage.image1 = that
             homePage.add(that)
@@ -156,117 +162,148 @@
                 //     print('Failed because: ' + message)
                 // }
             })
+            homePage.add(that)
+            // print(cordova.file)
+
+            // function saveFile() {
+            //     window.requestFileSystem(cordova.file.syncedDataDirectory.PERSISTENT, 0, function (fileSystem) {
+            //             print('requesting root directory...')
+            //             print("file system open: " + fileSystem.name)
+            //
+            //             // fileSystem.root.getFile("file.txt", (), (fileEntry) => {
+            //                 // fileEntry: fileEntry
+            //                 // fileEntry.filesystem
+            //
+            //                 // write(function () {
+            //
+            //                 // })
+            //             // })
+            //             // fileSystem.root.getFile("file.txt", {create: true, exclusive: false}, function (fileEntry) {
+            //             //     print("fileEntry is file?: " + fileEntry.isFile.toString())
+            //             //
+            //             // })
+            //
+            //         },
 
 
-            function takePictures(){
-                // navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.DATA_URL });
-                navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.FILE_URI });
-
-            }
-// 写真撮影が成功した時
-            function cameraSuccess(image){
-                var img = document.getElementById("image");
-                // img.src = "data:image/jpeg;base64," + image;
-                img.src = image
-
-            }
-// 失敗した時
-            function cameraError(message){
-                alert("Failed!!: " + message);
-            }
-
-            // UI: ADD NEW TASK:
-            // BOX: Container box for adding new task.
-            // homePage.boxNewTask = createBox(10, 10, 480, 80)
-            // homePage.add(that)
-            // that.color = "whitesmoke"
-            // that.border = 0
-            // that.round = 16
-            //
-            // // TEXTBOX: Where the new task is written.
-            // homePage.boxNewTask.txtNewTask = createTextBox(20, 15, 380)
-            // homePage.boxNewTask.add(that)
-            // that.minimal = 1
-            // that.color = "transparent"
-            // that.inputElement.setAttribute("placeholder", "Add a task")
-            // that.onChange(addTask)
-            // // Set shortcut name.
-            // txtNewTask = homePage.boxNewTask.txtNewTask
-            //
-            // // LABEL: Add new task label button.
-            // homePage.boxNewTask.lblAddButton = createLabel()
-            // homePage.boxNewTask.add(that)
-            // that.text = "+"
-            // that.textAlign = "center"
-            // that.color = "#23BCC1BB"
-            // that.textColor = "rgba(255, 255, 255, 0.95)"
-            // that.height = 50
-            // that.width = that.height
-            // that.fontSize = 36
-            // that.round = 25
-            // that.aline(txtNewTask, "right", 5)
-            // that.onClick(addTask)
-            //
-            // // UI: TASK ITEMS:
-            // // BOX: Scrollable container box of task items.
-            // homePage.boxTaskItemList = createBox(10, 100, 480, getDefaultContainerBox().height - 110)
-            // homePage.add(that)
-            // that.color = "white"
-            // that.border = 0
-            // that.scrollY = 1
-            //
-            // // UI: DELETE TASKS:
-            // // BOX: Container box for delete tasks.
-            // homePage.boxDeleteTask = createBox(10, 10, 480, 80)
-            // homePage.add(that)
-            // that.color = "whitesmoke"
-            // that.round = 16
-            // that.visible = 0
-            //
-            // // BOX: Background box for delete image.
-            // homePage.boxDeleteTask.boxBackground = createBox(0, 0, 55, 55)
-            // homePage.boxDeleteTask.add(that)
-            // that.color = "#ED6D5230"
-            // that.round = 30
-            // that.center()
-            // that.onClick(removeSelectedTasks)
-            //
-            // // IMAGE: Delete image.
-            // homePage.boxDeleteTask.boxBackground.imgDelete = createImage(0, 0, 35, 35)
-            // homePage.boxDeleteTask.boxBackground.add(that)
-            // that.load("assets/todo-app/trash.svg")
-            // that.opacity = 0.9
-            // that.center()
-            //
-            // // LABEL: Count of selected items on delete image.
-            // homePage.boxDeleteTask.lblCount = createLabel()
-            // homePage.boxDeleteTask.add(that)
-            // that.left = homePage.boxDeleteTask.boxBackground.left + 41
-            // that.top = homePage.boxDeleteTask.boxBackground.top - 4
-            // that.width = "auto"
-            // that.height = "auto"
-            // that.color = "white"
-            // that.text = "0"
-            // that.textColor = "#141414"
-            // that.fontSize = 16
-            // that.spaceY = 2
-            // that.spaceX = 7
-            // that.border = 1
-            // that.borderColor = "#141414"
-            // that.element.style.fontFamily = "opensans-bold"
-            // that.round = 50
-            // that.opacity = 0.7
-            // // Set shortcut name.
-            // lblSelectedCount = homePage.boxDeleteTask.lblCount
-            // print(device.cordova)
-
-            // When page reopens, create old records.
-            refreshTasks()
-            // Run each time the page size changes.
-            page.onResize(resizeHomePage)
         }
 
-        const resizeHomePage = function() {
+
+        function takePictures() {
+            // navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.DATA_URL });
+            navigator.camera.getPicture(cameraSuccess, cameraError, {
+                quality: 80,
+                destinationType: Camera.DestinationType.FILE_URI
+            });
+
+        }
+
+        // 写真撮影が成功した時
+        function cameraSuccess(image) {
+            var img = document.getElementById("image");
+            // img.src = "data:image/jpeg;base64," + image;
+            img.src = image
+            // saveFile()
+
+        }
+
+        // 失敗した時
+        function cameraError(message) {
+            alert("Failed!!: " + message);
+        }
+
+        // UI: ADD NEW TASK:
+        // BOX: Container box for adding new task.
+        // homePage.boxNewTask = createBox(10, 10, 480, 80)
+        // homePage.add(that)
+        // that.color = "whitesmoke"
+        // that.border = 0
+        // that.round = 16
+        //
+        // // TEXTBOX: Where the new task is written.
+        // homePage.boxNewTask.txtNewTask = createTextBox(20, 15, 380)
+        // homePage.boxNewTask.add(that)
+        // that.minimal = 1
+        // that.color = "transparent"
+        // that.inputElement.setAttribute("placeholder", "Add a task")
+        // that.onChange(addTask)
+        // // Set shortcut name.
+        // txtNewTask = homePage.boxNewTask.txtNewTask
+        //
+        // // LABEL: Add new task label button.
+        // homePage.boxNewTask.lblAddButton = createLabel()
+        // homePage.boxNewTask.add(that)
+        // that.text = "+"
+        // that.textAlign = "center"
+        // that.color = "#23BCC1BB"
+        // that.textColor = "rgba(255, 255, 255, 0.95)"
+        // that.height = 50
+        // that.width = that.height
+        // that.fontSize = 36
+        // that.round = 25
+        // that.aline(txtNewTask, "right", 5)
+        // that.onClick(addTask)
+        //
+        // // UI: TASK ITEMS:
+        // // BOX: Scrollable container box of task items.
+        // homePage.boxTaskItemList = createBox(10, 100, 480, getDefaultContainerBox().height - 110)
+        // homePage.add(that)
+        // that.color = "white"
+        // that.border = 0
+        // that.scrollY = 1
+        //
+        // // UI: DELETE TASKS:
+        // // BOX: Container box for delete tasks.
+        // homePage.boxDeleteTask = createBox(10, 10, 480, 80)
+        // homePage.add(that)
+        // that.color = "whitesmoke"
+        // that.round = 16
+        // that.visible = 0
+        //
+        // // BOX: Background box for delete image.
+        // homePage.boxDeleteTask.boxBackground = createBox(0, 0, 55, 55)
+        // homePage.boxDeleteTask.add(that)
+        // that.color = "#ED6D5230"
+        // that.round = 30
+        // that.center()
+        // that.onClick(removeSelectedTasks)
+        //
+        // // IMAGE: Delete image.
+        // homePage.boxDeleteTask.boxBackground.imgDelete = createImage(0, 0, 35, 35)
+        // homePage.boxDeleteTask.boxBackground.add(that)
+        // that.load("assets/todo-app/trash.svg")
+        // that.opacity = 0.9
+        // that.center()
+        //
+        // // LABEL: Count of selected items on delete image.
+        // homePage.boxDeleteTask.lblCount = createLabel()
+        // homePage.boxDeleteTask.add(that)
+        // that.left = homePage.boxDeleteTask.boxBackground.left + 41
+        // that.top = homePage.boxDeleteTask.boxBackground.top - 4
+        // that.width = "auto"
+        // that.height = "auto"
+        // that.color = "white"
+        // that.text = "0"
+        // that.textColor = "#141414"
+        // that.fontSize = 16
+        // that.spaceY = 2
+        // that.spaceX = 7
+        // that.border = 1
+        // that.borderColor = "#141414"
+        // that.element.style.fontFamily = "opensans-bold"
+        // that.round = 50
+        // that.opacity = 0.7
+        // // Set shortcut name.
+        // lblSelectedCount = homePage.boxDeleteTask.lblCount
+        // print(device.cordova)
+
+        // When page reopens, create old records.
+        // refreshTasks()
+        // Run each time the page size changes.
+        page.onResize(resizeHomePage)
+
+
+        const resizeHomePage = function () {
 
             page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
 
@@ -275,7 +312,7 @@
             homePage.center("left")
         }
 
-        const addTask = function() {
+        const addTask = function () {
 
             const taskText = txtNewTask.text
 
@@ -283,12 +320,12 @@
                 addTaskItem(taskText)
                 addTaskData(taskText)
 
-                txtNewTask.text = ""
+                // txtNewTask.text = ""
             }
         }
 
         // Clear all tasks and recreate based on data list.
-        const refreshTasks = function() {
+        const refreshTasks = function () {
 
             // Clear all tasks.
             taskList = []
@@ -300,7 +337,7 @@
         }
 
         // Add new task item object.
-        const addTaskItem = function(taskText) {
+        const addTaskItem = function (taskText) {
 
             const newItem = createTaskItem(taskText)
             homePage.boxTaskItemList.add(newItem)
@@ -315,13 +352,13 @@
         }
 
         // Add new task data.
-        const addTaskData = function(taskText) {
+        const addTaskData = function (taskText) {
             taskDataList.unshift(taskText)
             saveTaskDataList()
         }
 
         // Create new task item object.
-        const createTaskItem = function(taskText) {
+        const createTaskItem = function (taskText) {
 
             // BOX: Task item container box.
             const box = createBox(0, 0, 480, 100)
@@ -352,7 +389,7 @@
             return box
         }
 
-        const selectTask = function(clickedTask) {
+        const selectTask = function (clickedTask) {
 
             // If item is selected:
             if (clickedTask.isSelected) {
@@ -381,14 +418,14 @@
             }
         }
 
-        const removeSelectedTasks = function() {
+        const removeSelectedTasks = function () {
 
             let newTaskDataList = []
             let newTaskList = []
 
             for (let i = 0; i < taskList.length; i++) {
                 // If item is selected:
-                if(taskList[i].isSelected) {
+                if (taskList[i].isSelected) {
                     // Remove it.
                     taskList[i].remove()
 
@@ -410,16 +447,16 @@
             homePage.boxDeleteTask.visible = 0
         }
 
-        const saveTaskDataList = function() {
+        const saveTaskDataList = function () {
             storage.save("todoApp-taskDataList", taskDataList)
         }
 
-        const loadTaskDataList = function() {
+        const loadTaskDataList = function () {
             taskDataList = storage.load("todoApp-taskDataList") || []
         }
 
         // Because object positioning uses the coordinate system.
-        const repositionTasks = function() {
+        const repositionTasks = function () {
 
             let top = 0
 

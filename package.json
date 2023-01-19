@@ -18,23 +18,23 @@
   "devDependencies": {
     "cordova-browser": "^6.0.0",
     "cordova-electron": "^3.1.0",
-    "cordova-ios": "^6.2.0",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-camera": "github:apache/cordova-plugin-camera",
     "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-file": "^7.0.0",
     "cordova-plugin-local-notification": "^0.9.0-beta.2",
     "electron": "^22.0.3"
   },
   "cordova": {
     "platforms": [
       "electron",
-      "ios",
       "browser"
     ],
     "plugins": {
       "cordova-plugin-local-notification": {},
       "cordova-plugin-camera": {},
-      "cordova-plugin-device": {}
+      "cordova-plugin-device": {},
+      "cordova-plugin-file": {}
     }
   }
 }
