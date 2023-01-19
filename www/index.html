@@ -318,6 +318,7 @@
             // createButton(homePage.buttonToNot.left*5, homePage.buttonToNot.to, "auto")
             // createButton(homePage)
             createButton(homePage.sendNoti.left,homePage.sendNoti.top+50, 'auto', 'auto')
+            that.text = 'デバッグする...'
             // that.left = homePage.sendNoti.left
             that.onClick(function (e) {
                 button2Click(e)
@@ -374,19 +375,22 @@
         const button2Click = function (e){
             print("button2 hit.")
             page.color = "whitesmoke";
-
+            // document.defaultView.page.html("app2.htm")
             // *** EXAMPLE 1:
-
+            // window.location.href('app2.htm')
+            document.location = 'app2.htm'
             // UI WEB VIEW: Object description.
-            UIWebView.create();
-            homePage.secondPage = that
-            that.width = USED_WIDTH;
-            that.height = MAX_ZOOMABLE_WIDTH;
-            that.loadHTMLFile("app2.htm");
-            //that.remove();
-            // that.round = 4;
-            // Show at:
-            that.center();
+            // UIWebView.create();
+            // homePage.secondPage = that
+            // that.width = USED_WIDTH;
+            // that.height = MAX_ZOOMABLE_WIDTH;
+            // that.loadHTMLFile("app2.htm");
+            // //that.remove();
+            // // that.round = 4;
+            // // Show at:
+            // that.top =0
+            // that.center();
+            // homePage.add(that)
             // page = that
             // let box1 = createTextBox(50,200,500,700)
             // let button3 = createButton()
