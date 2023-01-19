@@ -57,6 +57,7 @@
             that.onClick(function (e) {
                 document.location = 'index.html'
             })
+            homePage.back1 = that
             homePage.add(that)
 
             // createImage(50, 300,'auto')
@@ -64,18 +65,39 @@
             // that.element.id = 'myImage'
             // homePage.image1 = that
             // homePage.add()
-            createImage(50, 200, 500, 'auto')
-            that.element.id = 'image'
-            homePage.image1 = that
-            homePage.add(that)
+            // createImage(50, 200, 500, 700)
+            // that.element.id = 'image'
+            // homePage.image1 = that
+            // homePage.add(that)
 
             createButton(50, 100, 'auto')
             that.text = 'カメラを立ち上げる。'
             that.color = 'red'
             that.onClick(function (e) {
                 print('button camera hit.')
+                // Photos.collections({"collectionMode": "ALBUMS"},
+                //     function(albums) {
+                //         console.log(albums);
+                //         let image1 = document.getElementById("image")
+                //
+                //         image1.src = albums.image()
+                //         print(image1.src)
+                //     },
+                //     function(error) {
+                //         console.error("Error: " + error);
+                //     });
+                // print(Photos.photos())
+                // Photos.photos(
+                //     function (photos) {
+                //         let image1 = document.getElementById("image")
+                //         image1.src = photos[0].get().url
+                //         homePage.image1.width = 'auto'
+                //         // homePage.image1.src = photos[0]['id'].src
+                //         // print(photos.)
+                //     }
+                // )
                 takePictures()
-                homePage.image1.height = 'auto'
+                // homePage.image1.height = 'auto'
                 // navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
                 // navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
                 //     destinationType: Camera.DestinationType.DATA_URL
@@ -90,6 +112,39 @@
                 //     // alert('Failed because: ' + message);
                 //     print('Failed because: ' + message)
                 // }
+            })
+            homePage.add(that)
+
+
+            createButton(50, 200, 'auto')
+            that.onClick(function () {
+                // var fileFullPath = cordova.file.tempDirectory + 'Temp.txt';
+                window.requestFileSystem(cordova.file.sharedDirectory.PERSISTENT,0,function (fs) {
+                    print(fs.name)
+                })
+                // window.resolveLocalFileSystemURL(fileFullPath, function(fileSystem) {
+                //     if(fileSystem.isFile) {
+                //         console.log('Temp.txt ファイルが存在する');
+                //     }
+                //     else {
+                //         console.log('Temp.txt ファイルが存在しない');
+                //     }
+                // }, function(error) {
+                //     console.log('ファイル存在確認中にエラーが発生', error.code);
+                // });
+                // window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                //
+                //     print('file system open: ' + fs.name);
+                //     fs.root.getFile("newPersistentFile.txt", { create: true, exclusive: false }, function (fileEntry) {
+                //
+                //         print("fileEntry is file?" + fileEntry.isFile.toString());
+                //         // fileEntry.name == 'someFile.txt'
+                //         // fileEntry.fullPath == '/someFile.txt'
+                //         cordova.file.writeFile(fileEntry, null);
+                //
+                //     }, onErrorCreateFile);
+                //
+                // }, onErrorLoadFs);
             })
             homePage.add(that)
             // print(cordova.file)
@@ -132,6 +187,8 @@
             var img = document.getElementById("image");
             // img.src = "data:image/jpeg;base64," + image;
             img.src = image
+            print(image)
+            // homePage.back1.height = 200
             // saveFile()
 
         }
@@ -229,17 +286,17 @@
         // When page reopens, create old records.
         // refreshTasks()
         // Run each time the page size changes.
-        page.onResize(resizeHomePage)
-
-
-        const resizeHomePage = function () {
-
-            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
-
-            homePage.height = getDefaultContainerBox().height
-            homePage.boxTaskItemList.height = getDefaultContainerBox().height - 110
-            homePage.center("left")
-        }
+        // page.onResize(resizeHomePage)
+        //
+        //
+        // const resizeHomePage = function () {
+        //
+        //     page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
+        //
+        //     homePage.height = getDefaultContainerBox().height
+        //     homePage.boxTaskItemList.height = getDefaultContainerBox().height - 110
+        //     homePage.center("left")
+        // }
 
 
     </script>

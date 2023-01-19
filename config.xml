@@ -22,5 +22,6 @@
     </edit-config>
     <preference name="iosExtraFilesystems" value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
 
+    <preference name="iosPersistentFileLocation" value="Library" />
 
 </widget>
