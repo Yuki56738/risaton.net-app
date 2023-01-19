@@ -33,7 +33,8 @@
     ],
     "plugins": {
       "cordova-plugin-local-notification": {},
-      "cordova-plugin-camera": {}
+      "cordova-plugin-camera": {},
+      "cordova-plugin-device": {}
     }
   }
 }
