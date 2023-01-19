@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-do list app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="library/basic.min.css">
+    <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="cordova.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+
+
+        const USED_WIDTH = 500
+        const MAX_ZOOMABLE_WIDTH = 700
+
+        let taskList = []
+        let taskDataList = []
+
+        // BOX: Container box of home content.
+        let homePage
+
+        // Shortcut names for frequently used objects.
+        let txtNewTask
+        let lblSelectedCount
+
+        // First running function.
+        const start = function () {
+
+            // Support all resolutions.
+            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
+
+            // Restore saved information.
+            // loadTaskDataList()
+
+            // UI: HOME PAGE:
+            // BOX: Container box of home content. Parameters: left, top, width, height.
+            homePage = createBox()
+            // that.color = 'white'
+            that.width = USED_WIDTH
+            that.height = basic.getDefaultContainerBox().height
+            // that.color = "white"
+            that.top = 0
+            that.center("left")
+            // print(cordova.file)
+            // cordova.writeFile("file.txt","aaa",{create: true})
+            // print(cordova.file.name)
+            // createLabel(50, 300, USED_WIDTH- 110, MAX_ZOOMABLE_WIDTH - 110)
+            // that.element.id = 'device1'
+
+            // document.getElementById('device1').innerText = device.model
+            // that.text = device.model
+            // device.model
+            createButton(50, 500, 'auto', 'auto')
+            that.text = '戻る'
+            that.onClick(function (e) {
+                document.location = 'index.html'
+            })
+            homePage.add(that)
+            //
+            
+            // createImage(50, 300,'auto')
+            // that.imageElement.id = 'myImage'
+            // that.element.id = 'myImage'
+            // homePage.image1 = that
+            // homePage.add()
+            // createImage(50, 200, 500, 'auto')
+            // that.element.id = 'image'
+            // homePage.image1 = that
+            // homePage.add(that)
+            //
+            // createButton(50, 100, 'auto')
+            // that.text = 'カメラを立ち上げる。'
+            // that.color = 'red'
+            // that.onClick(function (e) {
+            //     print('button camera hit.')
+            //     takePictures()
+            //     homePage.image1.height = 'auto'
+                // navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+                // navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
+                //     destinationType: Camera.DestinationType.DATA_URL
+                // });
+                //
+                // function onSuccess(imageData) {
+                //     var image = e.document.getElementById('myImage');
+                //     image.src = "data:image/jpeg;base64," + imageData;
+                // }
+                //
+                // function onFail(message) {
+                //     // alert('Failed because: ' + message);
+                //     print('Failed because: ' + message)
+                // }
+            // })
+            // homePage.add(that)
+            // print(cordova.file)
+
+            // function saveFile() {
+            //     window.requestFileSystem(cordova.file.syncedDataDirectory.PERSISTENT, 0, function (fileSystem) {
+            //             print('requesting root directory...')
+            //             print("file system open: " + fileSystem.name)
+            //
+            //             // fileSystem.root.getFile("file.txt", (), (fileEntry) => {
+            //                 // fileEntry: fileEntry
+            //                 // fileEntry.filesystem
+            //
+            //                 // write(function () {
+            //
+            //                 // })
+            //             // })
+            //             // fileSystem.root.getFile("file.txt", {create: true, exclusive: false}, function (fileEntry) {
+            //             //     print("fileEntry is file?: " + fileEntry.isFile.toString())
+            //             //
+            //             // })
+            //
+            //         },
+
+
+        }
+
+        //
+        // function takePictures() {
+        //     // navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.DATA_URL });
+        //     navigator.camera.getPicture(cameraSuccess, cameraError, {
+        //         quality: 80,
+        //         destinationType: Camera.DestinationType.FILE_URI
+        //     });
+        //
+        // }
+        //
+        // // 写真撮影が成功した時
+        // function cameraSuccess(image) {
+        //     var img = document.getElementById("image");
+        //     // img.src = "data:image/jpeg;base64," + image;
+        //     img.src = image
+        //     // saveFile()
+        //
+        // }
+        //
+        // // 失敗した時
+        // function cameraError(message) {
+        //     alert("Failed!!: " + message);
+        // }
+        //
+        // // UI: ADD NEW TASK:
+        // // BOX: Container box for adding new task.
+        // // homePage.boxNewTask = createBox(10, 10, 480, 80)
+        // // homePage.add(that)
+        // // that.color = "whitesmoke"
+        // // that.border = 0
+        // // that.round = 16
+        // //
+        // // // TEXTBOX: Where the new task is written.
+        // // homePage.boxNewTask.txtNewTask = createTextBox(20, 15, 380)
+        // // homePage.boxNewTask.add(that)
+        // // that.minimal = 1
+        // // that.color = "transparent"
+        // // that.inputElement.setAttribute("placeholder", "Add a task")
+        // // that.onChange(addTask)
+        // // // Set shortcut name.
+        // // txtNewTask = homePage.boxNewTask.txtNewTask
+        // //
+        // // // LABEL: Add new task label button.
+        // // homePage.boxNewTask.lblAddButton = createLabel()
+        // // homePage.boxNewTask.add(that)
+        // // that.text = "+"
+        // // that.textAlign = "center"
+        // // that.color = "#23BCC1BB"
+        // // that.textColor = "rgba(255, 255, 255, 0.95)"
+        // // that.height = 50
+        // // that.width = that.height
+        // // that.fontSize = 36
+        // // that.round = 25
+        // // that.aline(txtNewTask, "right", 5)
+        // // that.onClick(addTask)
+        // //
+        // // // UI: TASK ITEMS:
+        // // // BOX: Scrollable container box of task items.
+        // // homePage.boxTaskItemList = createBox(10, 100, 480, getDefaultContainerBox().height - 110)
+        // // homePage.add(that)
+        // // that.color = "white"
+        // // that.border = 0
+        // // that.scrollY = 1
+        // //
+        // // // UI: DELETE TASKS:
+        // // // BOX: Container box for delete tasks.
+        // // homePage.boxDeleteTask = createBox(10, 10, 480, 80)
+        // // homePage.add(that)
+        // // that.color = "whitesmoke"
+        // // that.round = 16
+        // // that.visible = 0
+        // //
+        // // // BOX: Background box for delete image.
+        // // homePage.boxDeleteTask.boxBackground = createBox(0, 0, 55, 55)
+        // // homePage.boxDeleteTask.add(that)
+        // // that.color = "#ED6D5230"
+        // // that.round = 30
+        // // that.center()
+        // // that.onClick(removeSelectedTasks)
+        // //
+        // // // IMAGE: Delete image.
+        // // homePage.boxDeleteTask.boxBackground.imgDelete = createImage(0, 0, 35, 35)
+        // // homePage.boxDeleteTask.boxBackground.add(that)
+        // // that.load("assets/todo-app/trash.svg")
+        // // that.opacity = 0.9
+        // that.center()
+        //
+        // // LABEL: Count of selected items on delete image.
+        // homePage.boxDeleteTask.lblCount = createLabel()
+        // homePage.boxDeleteTask.add(that)
+        // that.left = homePage.boxDeleteTask.boxBackground.left + 41
+        // that.top = homePage.boxDeleteTask.boxBackground.top - 4
+        // that.width = "auto"
+        // that.height = "auto"
+        // that.color = "white"
+        // that.text = "0"
+        // that.textColor = "#141414"
+        // that.fontSize = 16
+        // that.spaceY = 2
+        // that.spaceX = 7
+        // that.border = 1
+        // that.borderColor = "#141414"
+        // that.element.style.fontFamily = "opensans-bold"
+        // that.round = 50
+        // that.opacity = 0.7
+        // // Set shortcut name.
+        // lblSelectedCount = homePage.boxDeleteTask.lblCount
+        // print(device.cordova)
+
+        // When page reopens, create old records.
+        // refreshTasks()
+        // Run each time the page size changes.
+        page.onResize(resizeHomePage)
+
+
+        const resizeHomePage = function () {
+
+            page.fit(USED_WIDTH, MAX_ZOOMABLE_WIDTH)
+
+            homePage.height = getDefaultContainerBox().height
+            homePage.boxTaskItemList.height = getDefaultContainerBox().height - 110
+            homePage.center("left")
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
