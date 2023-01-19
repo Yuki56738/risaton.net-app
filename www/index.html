@@ -298,6 +298,7 @@
             createButton(homePage.buttonclickme.left*5,homePage.buttonclickme.top, "auto", "auto")
             that.text = "通知を送信"
             that.color = "red"
+
             that.onClick(function (e) {
                 print("button clicked")
                 cordova.plugins.notification.local.schedule({
@@ -309,9 +310,22 @@
                     //     { id: 'no',  title: 'No' }
                     // ]
                 });
-
+            })
+            homePage.sendNoti = that
+            homePage.add(that)
+            // homePage.buttonToNot = that
+            // homePage.add
+            // createButton(homePage.buttonToNot.left*5, homePage.buttonToNot.to, "auto")
+            // createButton(homePage)
+            createButton(homePage.sendNoti.left,homePage.sendNoti.top+50, 'auto', 'auto')
+            // that.left = homePage.sendNoti.left
+            that.onClick(function (e) {
+                button2Click(e)
             })
             homePage.add(that)
+            // that.left = homePage.buttonToNot.left * 5
+            // that.top = 200
+            // homePage.add(that)
 
 
             // When page reopens, create old records.
