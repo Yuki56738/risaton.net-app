@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
         <title>To-do list app</title>
         <meta charset="UTF-8">
@@ -8,10 +8,12 @@
         <link rel="stylesheet" type="text/css" href="library/basic.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--        <link rel="stylesheet" href='index.css'>-->
+        <script src="cordova.js" type="text/javascript" charset="utf-8"></script>
 <!--        <style rel="stylesheet" -->
         <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/component/ui-web-view.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/component/ui-page-control.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
 
         <!--        <script src="second_page.js" type="text/javascript"></script>-->
 <!--        <script src="second_page.js" type="text/javascript" charset="utf-8"</script>-->
@@ -292,8 +294,11 @@
             homePage.buttonRisaton = that
             homePage.add(that)
 
+
             createButton(homePage.buttonclickme.left*5,homePage.buttonclickme.top, "auto", "auto")
             that.onClick(function (e) {
+                print("button clicked")
+                cordova.plugins.notification.local()
 
             })
             homePage.add(that)
