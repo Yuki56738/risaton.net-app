@@ -112,7 +112,12 @@
             // that.color = "white"
             that.top = 0
             that.center("left")
+            // createLabel(50, 300, USED_WIDTH- 110, MAX_ZOOMABLE_WIDTH - 110)
+            // that.element.id = 'device1'
 
+            // document.getElementById('device1').innerText = device.model
+            // that.text = device.model
+                // device.model
             createButton(50, 500, 'auto', 'auto')
             that.text = '戻る'
             that.onClick(function (e) {
@@ -151,13 +156,19 @@
                 //     print('Failed because: ' + message)
                 // }
             })
+
+
             function takePictures(){
-                navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.DATA_URL });
+                // navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.DATA_URL });
+                navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.FILE_URI });
+
             }
 // 写真撮影が成功した時
             function cameraSuccess(image){
                 var img = document.getElementById("image");
-                img.src = "data:image/jpeg;base64," + image;
+                // img.src = "data:image/jpeg;base64," + image;
+                img.src = image
+
             }
 // 失敗した時
             function cameraError(message){
@@ -247,6 +258,7 @@
             // that.opacity = 0.7
             // // Set shortcut name.
             // lblSelectedCount = homePage.boxDeleteTask.lblCount
+            // print(device.cordova)
 
             // When page reopens, create old records.
             refreshTasks()

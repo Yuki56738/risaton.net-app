@@ -28,8 +28,8 @@
   "cordova": {
     "platforms": [
       "electron",
-      "browser",
-      "ios"
+      "ios",
+      "browser"
     ],
     "plugins": {
       "cordova-plugin-local-notification": {},
