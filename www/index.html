@@ -7,7 +7,9 @@
 
         <link rel="stylesheet" type="text/css" href="library/basic.min.css">
         <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
-<!--        <script src="second_page.js" type="text/javascript"></script>-->
+        <script src="js/component/ui-web-view.js" type="text/javascript" charset="utf-8"></script>
+
+        <!--        <script src="second_page.js" type="text/javascript"></script>-->
 <!--        <script src="second_page.js" type="text/javascript" charset="utf-8"</script>-->
 <!--        <script src="examples-js/custom-tab-bar/ui-bottom-tab-bar.js" type="text/javascript" charset="utf-8"></script>-->
 
@@ -234,30 +236,43 @@
             createLabel()
             that.left = 50
             that.top = 490
-            that.width = USED_WIDTH -100
+            // that.width = USED_WIDTH -100
+            that.width = 'auto'
             that.text = "タスクを追加するには、タスクを入力してからプラスボタンを押してください。"
             homePage.add(that)
 
 
 
 
-            createButton(50, 570, USED_WIDTH -111)
+            createButton(50, 570, "auto")
             that.text = 'クリックして!!'
+            that.width = that.width + 30
             that.onClick(button1Click)
             // homePage.label1 = that
             homePage.add(that)
             // var1.onClick(button1Click)
 
             // page move
-            createButton(50, 620, USED_WIDTH -111)
-            homePage.button2 = that
-            that.text = "ページ推移"
+            // createButton(50, 620, "auto")
+            // homePage.button2 = that
+            // that.text = "ページ推移"
+            // that.width = that.width + 30
             // that.onClick(secondExamplePage.openInSecondView())
-            that.onClick(button2Click)
+            // that.onClick(button2Click)
+            // homePage.add(that)
+            //
+            createButton(0,620,"auto")
+            // that.top = 200
+            that.left = 50
+            that.height = "auto"
+            // this.height = 200
+            // that.top = 500
+            // that.height = 720
+            that.text = "http://risaton.net"
+            that.onClick(function (self) {
+                open("http://risaton.net")
+            })
             homePage.add(that)
-
-
-
 
 
 
@@ -269,10 +284,10 @@
             // Run each time the page size changes.
             page.onResize(resizeHomePage)
             // UI OBJECT: Bottom tab bar:
-            bottomTabBar.create();
-            bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
-                homePage.openPageByIndex(selectedItemIndex);
-            });
+            // bottomTabBar.create();
+            // bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
+            //     homePage.openPageByIndex(selectedItemIndex);
+            // });
             //
 
 
@@ -303,14 +318,16 @@
             // *** EXAMPLE 1:
 
             // UI WEB VIEW: Object description.
-            homePage = UIWebView.create();
-            that.width = 500;
-            that.height = 700;
-            that.loadHTMLFile("index.html");
+            UIWebView.create();
+            homePage.secondPage = that
+            that.width = USED_WIDTH;
+            that.height = MAX_ZOOMABLE_WIDTH;
+            that.loadHTMLFile("app2.htm");
             //that.remove();
-            that.round = 4;
+            // that.round = 4;
             // Show at:
             that.center();
+            // page = that
             // let box1 = createTextBox(50,200,500,700)
             // let button3 = createButton()
             // button3.left = 50
