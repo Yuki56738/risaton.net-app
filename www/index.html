@@ -246,9 +246,12 @@
 
             createButton(50, 570, "auto")
             that.text = 'クリックして!!'
-            that.width = that.width + 30
+            that.width = that.width + 40
+            // that.width =
+            // that.width =
             that.onClick(button1Click)
             // homePage.label1 = that
+            homePage.buttonclickme = that
             homePage.add(that)
             // var1.onClick(button1Click)
 
@@ -264,7 +267,8 @@
             createButton(0,620,"auto")
             // that.top = 200
             that.left = 50
-            that.height = "auto"
+            that.width = homePage.buttonclickme.width
+            // that.height = "auto"
             // this.height = 200
             // that.top = 500
             // that.height = 720
@@ -272,6 +276,7 @@
             that.onClick(function (self) {
                 open("http://risaton.net")
             })
+            homePage.buttonRisaton = that
             homePage.add(that)
 
 
