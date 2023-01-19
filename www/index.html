@@ -99,7 +99,7 @@
         let field_description
 
         const USED_WIDTH = 500
-        const MAX_ZOOMABLE_WIDTH = 700
+        const MAX_ZOOMABLE_WIDTH = 500
         let AddATask
         // let label1 = 0
 
@@ -222,7 +222,7 @@
             lblSelectedCount = homePage.boxDeleteTask.lblCount
 
             // createLabel(50, 700, USED_WIDTH,500)
-            homePage.label1 = createLabel()
+            homePage.label1 = homePage.add(createLabel())
             that.left = 50
             that.top = 450
             that.width = USED_WIDTH -100
@@ -230,11 +230,13 @@
             // print(label1)
             // label1 = that.text
             that.text = "Created by Yuki Ito."
+            homePage.label1 = that
             createLabel()
             that.left = 50
             that.top = 490
             that.width = USED_WIDTH -100
             that.text = "タスクを追加するには、タスクを入力してからプラスボタンを押してください。"
+            homePage.add(that)
 
 
 
@@ -242,14 +244,18 @@
             createButton(50, 570, USED_WIDTH -111)
             that.text = 'クリックして!!'
             that.onClick(button1Click)
+            // homePage.label1 = that
+            homePage.add(that)
             // var1.onClick(button1Click)
 
             // page move
-            // createButton(50, 620, USED_WIDTH -111)
-            // homePage.button2 = that
-            // that.text = "ページ推移"
+            createButton(50, 620, USED_WIDTH -111)
+            homePage.button2 = that
+            that.text = "ページ推移"
             // that.onClick(secondExamplePage.openInSecondView())
-            // that.onClick(button2Click)
+            that.onClick(button2Click)
+            homePage.add(that)
+
 
 
 
@@ -292,15 +298,19 @@
         }
         const button2Click = function (e){
             print("button2 hit.")
-            let secondPage = e.homepage = createBox()
-            that.width = USED_WIDTH
-            that.height = basic.getDefaultContainerBox().height
-            // that.color = ""
-            that.top = 0
-            that.center("left")
+            page.color = "whitesmoke";
 
-            let button3 = createButton(50,USED_WIDTH, 200, 200)
+            // *** EXAMPLE 1:
 
+            // UI WEB VIEW: Object description.
+            homePage = UIWebView.create();
+            that.width = 500;
+            that.height = 700;
+            that.loadHTMLFile("index.html");
+            //that.remove();
+            that.round = 4;
+            // Show at:
+            that.center();
             // let box1 = createTextBox(50,200,500,700)
             // let button3 = createButton()
             // button3.left = 50
