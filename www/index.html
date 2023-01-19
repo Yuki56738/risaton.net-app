@@ -296,9 +296,19 @@
 
 
             createButton(homePage.buttonclickme.left*5,homePage.buttonclickme.top, "auto", "auto")
+            that.text = "通知を送信"
+            that.color = "red"
             that.onClick(function (e) {
                 print("button clicked")
-                cordova.plugins.notification.local()
+                cordova.plugins.notification.local.schedule({
+                    // title: 'The big survey',
+                    text: 'これは通知のテストです。',
+                    // attachments: ['file://img/rb-leipzig.jpg'],
+                    // actions: [
+                    //     { id: 'yes', title: 'Yes' },
+                    //     { id: 'no',  title: 'No' }
+                    // ]
+                });
 
             })
             homePage.add(that)
