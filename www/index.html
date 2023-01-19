@@ -253,10 +253,10 @@
             // Run each time the page size changes.
             page.onResize(resizeHomePage)
             // UI OBJECT: Bottom tab bar:
-            bottomTabBar.create();
-            bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
-                homePage.openPageByIndex(selectedItemIndex);
-            });
+            // bottomTabBar.create();
+            // bottomTabBar.onItemClick(function(selectedItem, selectedItemIndex) {
+            //     homePage.openPageByIndex(selectedItemIndex);
+            // });
             //
 
             resizeHomePage()
@@ -283,13 +283,26 @@
         }
         const button2Click = function (e){
             print("button2 hit.")
-            htmPage = UIWebView.create();
-            that.width = 500;
-            that.height = 700;
-            that.loadHTMLFile("second_page.html");
-            that.center("left");
-            that.top = 0
+            // homePage.PAGE_ID = 0
+            // e.homepage = UIToggle.create(e.homepage.loadHTMLFile("second_page.html"))
+            // that.loadHTMLFile("second_page.html")
+            // that.PAGE_ID = 1
+            // that.width = 500;
+            // that.height = 700
+            // homePage.openPageByIndex(1)
+            // that.top = 0
+            // view1.secon
+            // document.getElementById("content").innerHTML='<object type="text/html" data="second_page.html" ></object>';
+            // that.top = 0
+            // e.homepage = page.homepage.loadHTMLFile("second_page.html")
+
+            // e.homepage.top = 0
+            // that.left
+
+
             //
+
+
             // that.round = 4;
             // Show at:
             // that.top = 0
