@@ -132,12 +132,14 @@
             // UI: HOME PAGE:
             // BOX: Container box of home content. Parameters: left, top, width, height.
             homePage = createBox()
-            this.PAGE_ID = 0
+            // this.PAGE_ID = 0
+
             that.width = USED_WIDTH
             that.height = basic.getDefaultContainerBox().height
             that.color = "white"
             that.top = 0
             that.center("left")
+            that.pageId = 0
             
             // UI: ADD NEW TASK:
             // BOX: Container box for adding new task.
@@ -290,6 +292,11 @@
             homePage.buttonRisaton = that
             homePage.add(that)
 
+            createButton(homePage.buttonclickme.left*5,homePage.buttonclickme.top, "auto", "auto")
+            that.onClick(function (e) {
+
+            })
+            homePage.add(that)
 
 
             // When page reopens, create old records.
@@ -332,7 +339,7 @@
             //     selectedColor = "red";
             //     e.color = "green"
             // })
-            openColorSelectionDialog()
+            // openColorSelectionDialog()
             homePage.label1.text = 'あなたがクリックしたのを私は知っている。'
         }
         const button2Click = function (e){
