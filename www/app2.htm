@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="library/basic.min.css">
     <script src="library/basic.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/app.js" type="text/javascript"></script>
+    <script src="cordova.js" type="text/javascript" charset="utf-8"></script>
     <script>
 
         /*
@@ -118,27 +119,50 @@
                 document.location = 'index.html'
             })
 
-            createImage(50, 300,'auto')
-            that.element.id = 'myImage'
-            homePage.image1 = that
+            // createImage(50, 300,'auto')
+            // that.imageElement.id = 'myImage'
+            // that.element.id = 'myImage'
+            // homePage.image1 = that
             // homePage.add()
+            createImage(50,200, 500,'auto')
+            that.element.id = 'image'
+            homePage.image1 = that
+            homePage.add(that)
+
             createButton(50, 100, 'auto')
             that.text = 'カメラを立ち上げる。'
             that.color = 'red'
             that.onClick(function (e) {
-                navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
-                    destinationType: Camera.DestinationType.DATA_URL
-                });
-
-                function onSuccess(imageData) {
-                    var image = document.getElementById('myImage');
-                    image.src = "data:image/jpeg;base64," + imageData;
-                }
-
-                function onFail(message) {
-                    alert('Failed because: ' + message);
-                }
+                print('button camera hit.')
+                takePictures()
+                homePage.image1.height = 'auto'
+                // navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+                // navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
+                //     destinationType: Camera.DestinationType.DATA_URL
+                // });
+                //
+                // function onSuccess(imageData) {
+                //     var image = e.document.getElementById('myImage');
+                //     image.src = "data:image/jpeg;base64," + imageData;
+                // }
+                //
+                // function onFail(message) {
+                //     // alert('Failed because: ' + message);
+                //     print('Failed because: ' + message)
+                // }
             })
+            function takePictures(){
+                navigator.camera.getPicture(cameraSuccess, cameraError, { quality: 80, destinationType: Camera.DestinationType.DATA_URL });
+            }
+// 写真撮影が成功した時
+            function cameraSuccess(image){
+                var img = document.getElementById("image");
+                img.src = "data:image/jpeg;base64," + image;
+            }
+// 失敗した時
+            function cameraError(message){
+                alert("Failed!!: " + message);
+            }
 
             // UI: ADD NEW TASK:
             // BOX: Container box for adding new task.
