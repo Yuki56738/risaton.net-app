@@ -27,8 +27,8 @@
   },
   "cordova": {
     "platforms": [
-      "browser",
-      "ios"
+      "ios",
+      "browser"
     ],
     "plugins": {
       "cordova-plugin-local-notification": {},
