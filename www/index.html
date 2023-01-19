@@ -148,7 +148,7 @@
             that.minimal = 1
             that.color = "transparent"
             // that.inputElement.setAttribute("placeholder", "Add a task")
-            that.inputElement.setAttribute("placeholder", "タスクを追加する =>")
+            that.inputElement.setAttribute("placeholder", "タスクを追加してください...")
 
             that.onChange(addTask)
             // Set shortcut name.
@@ -224,23 +224,32 @@
             // createLabel(50, 700, USED_WIDTH,500)
             homePage.label1 = createLabel()
             that.left = 50
-            that.top = 500
+            that.top = 450
             that.width = USED_WIDTH -100
             // that.text = 'aaaaa'
             // print(label1)
             // label1 = that.text
             that.text = "Created by Yuki Ito."
+            createLabel()
+            that.left = 50
+            that.top = 490
+            that.width = USED_WIDTH -100
+            that.text = "タスクを追加するには、タスクを入力してからプラスボタンを押してください。"
 
 
-            createButton(50, 550, USED_WIDTH -111)
+
+
+            createButton(50, 570, USED_WIDTH -111)
             that.text = 'クリックして!!'
             that.onClick(button1Click)
             // var1.onClick(button1Click)
-            createButton(50, 620, USED_WIDTH -111)
-            homePage.button2 = that
-            that.text = "ページ推移"
+
+            // page move
+            // createButton(50, 620, USED_WIDTH -111)
+            // homePage.button2 = that
+            // that.text = "ページ推移"
             // that.onClick(secondExamplePage.openInSecondView())
-            that.onClick(button2Click)
+            // that.onClick(button2Click)
 
 
 
@@ -248,6 +257,8 @@
 
             // When page reopens, create old records.
             refreshTasks()
+            resizeHomePage()
+
 
             // Run each time the page size changes.
             page.onResize(resizeHomePage)
@@ -258,7 +269,6 @@
             });
             //
 
-            resizeHomePage()
 
             print("hello.")
 
